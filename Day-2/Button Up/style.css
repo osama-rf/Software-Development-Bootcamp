@@ -1,5 +1,7 @@
 .first-button{
     border: 0.15rem solid;
+    font-weight: bold;
+    font-size: 15px;
     border-radius: 28px;
     border-color: #7AB4B7;
     color: #7AB4B7;
