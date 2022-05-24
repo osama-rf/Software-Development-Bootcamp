@@ -18,7 +18,7 @@
 
 .nav-links{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 400px;
 }
@@ -38,7 +38,6 @@
 }
 
 .btn{
-    margin-right:10px;
     background-color: #4B9FB5;
     border: 0.2rem black solid;
     color:white;
