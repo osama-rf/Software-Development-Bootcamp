@@ -61,11 +61,12 @@
     justify-content: space-around;
 }
 
+
 .left-side-body .profile-container{
     display:flex;
     flex-direction: column;
     border: 0.2rem #CCCCCC solid;
-    width:100%;
+    width:150%;
     height: 350px;
     margin: 0px auto;
     position: relative;
@@ -135,7 +136,7 @@
     position: relative;
     top:150px;
     border: 0.2rem #CCCCCC solid;
-    width:100%;
+    width:150%;
     margin: 0px auto;
     border-radius: 3px;
 }
