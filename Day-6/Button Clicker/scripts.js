@@ -1,5 +1,5 @@
 function like(element){
-    var text = element.innerHTML;
+    var text = element.innerText;
     var number = "";
     for(var i = 0; i < text.length; i++){
         if(!isNaN(text[i])){
@@ -10,7 +10,7 @@ function like(element){
             continue;
         }
     }
-    element.innerHTML = ++number + " " + "likes";
+    element.innerText = ++number + " " + "likes";
     alert("Ninja was liked");
 }
 
@@ -19,9 +19,10 @@ function remove(element){
 }
 
 function isLoggedIn(element){
-    if(element.innerHTML == "Login"){
-        element.innerHTML = "Logout";
+    if(element.innerText == "Login"){
+        element.innerText = "Logout";
     }else{
-        element.innerHTML = "Login"
+        element.innerText = "Login"
     }
 }
+
