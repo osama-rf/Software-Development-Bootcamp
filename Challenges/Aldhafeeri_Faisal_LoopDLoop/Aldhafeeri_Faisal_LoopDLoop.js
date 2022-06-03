@@ -24,7 +24,6 @@ for(var treadmill = 0; treadmill < 6; treadmill++){
     }
 }
 
-
 //Stretch Feature 1
 var currSpeed = 5.6; // per hour , this variable for the Stretch Feature 1
 for(var treadmill = 0; treadmill < 6; treadmill++){
