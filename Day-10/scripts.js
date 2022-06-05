@@ -9,7 +9,8 @@ function reverseString(str) {
   /*****************************************************************************/
 
   function acronymize(str) {
-      var array = str.split(" ");
+   
+    var array = str.split(" ");
       var word = "";
       for(var i = 0; i < array.length; i++){
           if(array[i][0] == undefined){
