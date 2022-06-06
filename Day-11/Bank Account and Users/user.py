@@ -31,4 +31,4 @@ class User:
 user1 = User("Faisal")
 user1.display_user_balance()
 user1.open_bank_account("Saving Account",0.05,5000).make_deposit(400,"Saving Account").display_user_balance()
-user1.open_bank_account("Funding2 Account",0.01).display_user_balance()
+user1.open_bank_account("Funding2 Account",0.01).make_deposit(200,"Funding2 Account").display_user_balance()
