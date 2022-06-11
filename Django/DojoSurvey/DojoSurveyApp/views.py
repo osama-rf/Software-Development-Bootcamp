@@ -11,7 +11,6 @@ def create(request):
     comment = request.POST['comment']
     gender = request.POST['gender']
     skills = request.POST.getlist('skills[]')
-    print(request.POST)
     context = {
         'name':name,
         'location':location,
