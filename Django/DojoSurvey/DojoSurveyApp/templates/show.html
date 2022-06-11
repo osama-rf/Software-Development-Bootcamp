@@ -37,7 +37,7 @@
         </div>
         <div class="row mx-4">
             <div class="col">
-                <label for="name" class="form-label">Dojo Location:</label>
+                <label for="" class="form-label">Dojo Location:</label>
             </div>
             <div class="col">
                 {{location}}
@@ -45,7 +45,7 @@
         </div>
         <div class="row mx-4">
             <div class="col">
-                <label for="name" class="form-label">Favorite Language:</label>
+                <label for="" class="form-label">Favorite Language:</label>
             </div>
             <div class="col">
                 {% if language == 'Python' %} Python!!! {% else %} {{language}} {% endif %}
@@ -53,7 +53,23 @@
         </div>
         <div class="row mx-4">
             <div class="col">
-                <label for="name" class="form-label">Comment:</label>
+                <label for="" class="form-label">Gender:</label>
+            </div>
+            <div class="col">
+                {{gender}}
+            </div>
+        </div>
+        <div class="row mx-4">
+            <div class="col">
+                <label for="" class="form-label">Skills:</label>
+            </div>
+            <div class="col">
+                {% for skill in skills %} {{skill}} {% endfor %}
+            </div>
+        </div>
+        <div class="row mx-4">
+            <div class="col">
+                <label for="" class="form-label">Comment:</label>
             </div>
             <div class="col">
                 {{comment}}

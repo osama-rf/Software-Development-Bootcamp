@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render , HttpResponse
 
 def index(request):
@@ -8,11 +9,16 @@ def create(request):
     location = request.POST['location']
     language = request.POST['language']
     comment = request.POST['comment']
+    gender = request.POST['gender']
+    skills = request.POST.getlist('skills[]')
+    print(request.POST)
     context = {
         'name':name,
         'location':location,
         'language':language,
-        'comment':comment
+        'comment':comment,
+        'gender':gender,
+        'skills':skills,
     }
     
     return render(request,'show.html',context)
