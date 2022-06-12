@@ -17,27 +17,32 @@
             <h1 class="display-3">Welcome to the Great Number Game!</h1>
             <p class="lead">I am thinking of a number between 1 and 100</p>
             <p class="lead">Take a guess!</p>
+
             {% if 'alert' in request.session %}
             <div style="width: 250px; height: 250px" class="container d-flex flex-column justify-content-center border border-3 border-dark bg-{{request.session.alert}} text-white fs-4">
                 <p>{{request.session.message}}</p>
-
                 {% if request.session.alert == 'success' %}
-                <a class="btn btn-dark text-white w-50 mx-auto" href="/destroy_session" role="button">Play again</a> {% endif %}
+                    <a class="btn btn-dark text-white w-50 mx-auto" href="/destroy_session" role="button">Play again</a> 
+                {% endif %}
             </div>
             {% endif %}
-            <hr class="my-2" /> {% if request.session.alert != 'success' %}
-            <form action="/guess" method="POST">
-                {% csrf_token %}
-                <div class="mb-3">
-                    <label for="" class="form-label"></label>
-                    <input type="number" class="form-control border border-primary w-25 mx-auto" name="guess" required />
-                    <small id="helpId" class="form-text text-muted">write your guess here</small>
-                </div>
-                <p class="lead">
-                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                </p>
-            </form>
+
+            <hr class="my-2" /> 
+
+            {% if request.session.alert != 'success' %}
+                <form action="/guess" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="" class="form-label"></label>
+                        <input type="number" class="form-control border border-primary w-25 mx-auto" name="guess" required />
+                        <small id="helpId" class="form-text text-muted">write your guess here</small>
+                    </div>
+                    <p class="lead">
+                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                    </p>
+                </form>
             {% endif %}
+            
         </div>
     </div>
 
