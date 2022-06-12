@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <title>Ninja Gold Game</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        #findBtn {
+            color: black;
+            background-color: white;
+            box-shadow: 3px 3px 1px black;
+            border-color: black;
+        }
+
+        #findBtn:hover {
+            color: black;
+            background-color: orange;
+        }
+
+        #activities {
+            height: 250px;
+            overflow: scroll;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="p-5 bg-light">
+        <div class="container">
+            <h1 class="display-3 text-center">Ninja Gold Game</h1>
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="m-3 d-flex justify-content-center align-items-center">
+                    <label for="gold" class="form-label w-50">Your Gold:</label>
+                    <input type="text" name="gold" class="form-control" value="{{request.session.gold}}" disabled>
+                </div>
+                <div class="m-3">
+                    <a class="btn btn-primary" href="/destroy" role="button">Start Over</a>
+                </div>
+            </div>
+            <hr class="my-2">
+
+            <div class="container d-flex justify-content-center align-items-center">
+                <div class="col-3 border border-2 border-dark rounded m-2 d-flex flex-column align-items-center">
+                    <h1 class="m-3">Farm</h1>
+                    <p class="m-3">(earns 10-20 gold)</p>
+                    <a id="findBtn" class="btn btn-primary mb-2" href="/process_money?location=farm" role="button">
+                        FindGold!
+                    </a>
+                </div>
+                <div class="col-3 border border-2 border-dark rounded m-2 d-flex flex-column align-items-center">
+                    <h1 class="m-3">Cave</h1>
+                    <p class="m-3">(earns 10-20 gold)</p>
+                    <a id="findBtn" class="btn btn-primary mb-2" href="/process_money?location=cave" role="button">
+                        FindGold!
+                    </a>
+                </div>
+                <div iclass="col-3 border border-2 border-dark rounded m-2 d-flex flex-column align-items-center">
+                    <h1 class="m-3">House</h1>
+                    <p class="m-3">(earns 10-20 gold)</p>
+                    <a id="findBtn" class="btn btn-primary mb-2" href="/process_money?location=house" role="button">
+                        FindGold!
+                    </a>
+                </div>
+                <div iclass="col-3 border border-2 border-dark rounded m-2 d-flex flex-column align-items-center">
+                    <h1 class="m-3">Quest</h1>
+                    <p class="m-3">(earns/takes 0-50 gold)</p>
+                    <a id="findBtn" class="btn btn-primary mb-2" href="/process_money?location=quest" role="button">
+                        FindGold!
+                    </a>
+                </div>
+            </div>
+
+            <div class="container mt-3">
+                <div class="mb-3">
+                    <label for="activities" class="form-label fs-3">Activities:</label>
+                    <div id="activities" class="form-control border border-2 border-dark">
+                        {% for activity in request.session.activities reversed %}
+                        <p class="{% if 'failed' in activity %} text-danger {% else %} text-success {% endif %}">
+                            {{activity}}
+                        </p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
